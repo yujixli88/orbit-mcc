@@ -44,4 +44,4 @@ async def ws(ws: WebSocket):
     except WebSocketDisconnect:
         clients.discard(ws)
 
-app.mount("/", StaticFiles(directory=pathlib.Path(__file__).parent.parent / "frontend", html=True))
+app.mount("/", StaticFiles(directory=pathlib.Path(file).parent, html=True))
