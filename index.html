@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЦУП — Управление спутником</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🛰 ЦУП · Спутник «Орбита-1»</h1>
+  <span id="conn" class="pill off">нет соединения</span>
+</header>
+<main>
+  <section class="card map-card">
+    <h2>Положение и траектория <small id="sunState"></small></h2>
+    <canvas id="map" width="1000" height="500"></canvas>
+    <div class="legend"><span class="dot track"></span>прогноз орбиты <span class="dot trail"></span>пройденный путь <span class="dot gs"></span>станция</div>
+  </section>
+
+  <section class="card">
+    <h2>Телеметрия</h2>
+    <div class="grid" id="telemetry"></div>
+  </section>
+
+  <section class="card">
+    <h2>Статус систем</h2>
+    <ul id="modules"></ul>
+  </section>
+
+  <section class="card">
+    <h2>Команды</h2>
+    <div class="cmds">
+      <button data-cmd="deploy_panels">☀ Раскрыть батареи</button>
+      <button data-cmd="take_photo">📷 Сделать снимок</button>
+      <button data-cmd="boost_orbit">🚀 Поднять орбиту</button>
+      <select id="rebootSel"></select>
+      <button data-cmd="reboot" data-arg="select">⟳ Перезагрузить</button>
+      <button class="danger" data-cmd="inject_fault" data-arg="engine">⚠ Имитировать отказ</button>
+    </div>
+    <ul id="log"></ul>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
